@@ -1,0 +1,73 @@
+Evan Wallace
+Mastodon
+GitHub
+Figma
+Figma is a interface design tool. It's most often used by teams of software professionals to communicate about and iterate on their user interfaces. For example, if you are creating a mobile app you might use Figma to illustrate how the app should look and to prototype how the app should behave.
+
+I cofounded Figma in 2012 with Dylan Field and worked on Figma as CTO for the better part of a decade, leaving in 2021. When we started the interface design industry was largely using Sketch, having just transitioned away from Adobe's suite of creative tools. But by the time I left, Figma had become the dominant interface design tool in the industry and had permanently changed how the industry thought about interface design tooling.
+
+Contributions
+My work on Figma was primarily focused on the areas listed below. Keep in mind that everything I did at Figma was a collaboration between many people and was later built upon, extended, and/or overhauled. Figma has an amazing engineering team and they deserve the credit for what Figma has become today, which is due to their sustained effort over many years.
+
+Browser-based editor
+In some respects, Figma's primary innovation was being a browser-based application instead of a native application. This was a very unusual decision at the time because interface design tools are very difficult to build due to their graphics-intensive and memory-hungry nature, and building one that runs the browser is even more difficult than building a normal native application. We were at the cutting edge of web app technology at a time when browser-based graphics apps like Figma were just barely possible.
+
+However, being in the browser was likely critical to Figma's success. Interface design is a fundamentally collaborative profession involving many roles (e.g. design, product management, marketing, engineering, executives) and browser-based tools like Figma make collaboration between users much more natural and effortless. Figma documents are just links so they can be shared anywhere, they run on any platform, and they always show the latest changes live, which brought many advantages over the previous generation of non-browser design tools. Being in the browser also made it easy for us to iterate very quickly and push out improvements to all of our users almost every day.
+
+I developed the hybrid C++/JavaScript architecture for Figma's editor that made it possible to build a best-in-class design tool in the browser. The document representation and canvas area is in C++ while the UI around the canvas is in JavaScript (the team eventually settled on TypeScript + React for this). This let us heavily optimize the document representation to reduce memory usage and improve editing speed while still using modern UI technologies for fast iteration on our UI. C++ development was done using Xcode (not in the browser) to provide a better debugging environment. You can read more about this architecture in our blog post: Building a professional design tool on the web.
+
+Rendering engine
+Even though the contents of Figma documents are similar to what HTML can display, Figma actually does all of its own document rendering for cross-browser consistency and performance. Figma uses WebGL for rendering which bypasses most of the browser's HTML rendering pipeline and lets the app work closely with the graphics card. The rendering engine handles curve rendering, images, blurs, masking, blending, and opacity groups, and optimizes for high visual fidelity.
+
+I co-developed Figma's initial rendering engine with Alec Miller, another Figma engineer, and then developed a next-generation rendering engine that was even faster. Despite running in the browser, Figma's rendering engine was often faster than the rendering engines in our competitor's native applications. You can read more about the transition to the next-generation rendering engine in this blog post: Figma, faster. Other Figma engineers later rewrote the rendering engine for mobile to be better tuned for animation instead of for zooming, which involved some really cool optimization work.
+
+Multiplayer collaboration
+This refers to two or more people editing the same Figma document at the same time, and happens whenever multiple people open the same Figma document in their browsers simultaneously. It's similar to how Google Docs works for text editing if you're familiar with that. This an amazing way to collaborate because it dramatically reduces friction. You no longer have to worry about editing the wrong version, coordinating with others to avoid overwriting their work, or setting up screen sharing during a design presentation.
+
+I developed Figma's multiplayer syncing protocol, worked on the initial version of the multiplayer live collaboration service (a kind of specialized real-time database), and added multiplayer syncing support to Figma's existing editing application. The initial version was written in TypeScript but I later ported it to Rust for improved performance and stability. You can read more about how multiplayer syncing works here: How Figma’s multiplayer technology works, and about the port to Rust here: Rust in Production at Figma. The team layered many improvements on top including additional scale and robustness work and some very interesting graph database features.
+
+Vector editing
+Vector graphics are scalable images that are represented using mathematical curves and that remain sharp at any resolution. Logos and icons are usually vector graphics and are an important aspect of interface design. Vector editing involves manipulating these mathematical curves, either directly with the mouse or indirectly through the merging of multiple primitive shapes.
+
+I helped develop a new approach to vector representation called "vector networks" which you can read about here: Introducing Vector Networks. This system serves as a core part of Figma's document model and is more intuitive to manipulate than paths, which most other vector editing tools use as a foundation. I also developed a lot of the vector manipulation tools in Figma's editor.
+
+Text editing
+Text layout is notoriously complex because it involves Unicode, which pulls in pretty much the full set of all human writing systems, which are complex and varied for cultural reasons. If you're interested, Text Rendering Hates You is an excellent post that talks about some of the complexity involved with text layout. Text selection and editing is even more complex with platform-specific mouse, keyboard, and touch interactions that must work well with all layout features. There are a few publicly-available libraries that help with text layout, but there aren't really any that help with text selection and editing because it's typically very customized. The existing systems that do this are inseparable from the bigger projects that they are a part of (e.g. macOS, Chrome, Qt).
+
+I developed the initial text layout and editing system used in Figma's editor, which set us down the path of creating our own full text editing implementation. The initial system used platform-native interactions on all operating systems but only supported English-like text and per-character style attributes. Later on the team greatly extended it to support many features including font fallback, variable fonts, OpenType features, and bidirectional text.
+
+File format
+Figma uses the same serialization format for both multiplayer syncing and snapshot storage. It's an internal implementation detail and may be changed at any time (the stable interface for files is the HTTP API). However, it has remained mostly stable and has only undergone minor changes so far.
+
+It uses the kiwi binary serialization format, which I developed while implementing Figma's multiplayer syncing. The schema is absent from the data stream for a more compact encoding, since the web app always already knows the schema. Snapshots (what you get when you use "Save local copy..." in Figma) bundle the schema with the data to make the data more portable, and then wrap the result in a zip file with some additional data including any referenced image resources. You can see what the inside of an exported Figma snapshot file looks like with a .fig file parser.
+
+Blog Posts
+Below are all of the blog posts that I wrote for Figma's company blog regarding the technology I worked on while at Figma. They are preserved here in case the company blog is ever overhauled in the future:
+
+
+How Figma's multiplayer technology works
+October 16, 2019
+
+An update on plugin security
+October 2, 2019
+
+Rust in Production at Figma
+May 2, 2018
+
+WebAssembly cut Figma's load time by 3x
+June 8, 2017
+
+Realtime Editing of Ordered Sequences
+March 6, 2017
+
+Debugging Data Corruption with Emscripten
+November 7, 2016
+
+Multiplayer Editing in Figma
+September 28, 2016
+
+Introducing Vector Networks
+February 9, 2016
+
+Building a professional design tool on the web
+December 7, 2015

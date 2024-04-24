@@ -1,0 +1,83 @@
+Mastodon
+GitHub
+Evan Wallace
+Professional Work
+Figma (2012-2021)
+I'm one of the cofounders of Figma, a collaborative browser-based interface design tool. My main contributions were to the rendering engine, the multiplayer collboration service, the vector and text editors, and the plugin system.
+
+Read more...
+
+Compilers
+esbuild (2020-present)
+My biggest open source project is esbuild, a very fast JavaScript and CSS bundler. It's main purpose is to bring about a new era of build tool performance. At the time I released it, commonly-used web development tools were 10-100x slower than esbuild.
+
+Visit website...
+
+Skew (2015-2019)
+I designed the Skew programming language with an optimizing compiler to generate compact and efficient JavaScript. It was the technology behind Figma's lightweight mobile document renderer.
+
+Visit website...
+
+Graphics
+WebGL Water (2010)
+This project was an experiment in realtime water rendering with WebGL. The focus was on the rendering aspect, not on the simulation, so the behavior of the water isn't that realistic. The water heightfield is simulated using a floating-point texture and the caustics are rendered using the GLSL derivative functions.
+
+View demo...
+
+WebGL Path Tracing (2010)
+Path tracing is a realistic lighting algorithm that simulates light bouncing around a scene. This path tracer uses WebGL for realtime performance and supports diffuse, mirrored, and glossy surfaces.
+
+View demo...
+
+WebGL Image Filters (2011)
+Adjust your photos in your browser in realtime with ten different image filters. This uses WebGL for speed, is entirely client-side, and is open source on GitHub. It was coded from scratch in 24 hours for HackNY, a hackathon in NYC, where it won second place.
+
+View demo...
+
+Shader Articles (2015)
+A collection of interesting bits of shader code. All demos use WebGL and run in all major browsers.
+
+View demos...
+
+Games
+Robots Are People Too (2010-2011)
+This is a complex side-scrolling platformer with two-player gameplay and a unique split-screen mechanic. It was developed by me and two other students as a winter break project and won "Most Fun" in Mozilla's Game On competition.
+
+Read more...
+
+Apps
+Tagception (2022)
+A macOS app for viewing and editing file system tags. You can nest tags inside of other tags in a tree hierarchy, which is not something that macOS Finder can do.
+
+Read more...
+
+Source Map Visualization (2021)
+This is a high-performance source map visualization tool that doesn't freeze with large source maps. I made it for debugging real-world source map generation issues in esbuild.
+
+Use app...
+
+Theta Math (2015)
+This web app graphs an equation and allows you to pan and zoom around the coordinate grid. It's GPU-powered with a custom equation editor and is highly optimized. It was my winter 2015-2016 break project.
+
+Use app...
+
+Diskitude (2010)
+Diskitude helps you figure out what is taking up space on your hard drive. Explore your file system using a radial graph and prune unnecessary files. The app was also an experiment in Windows executable size reduction and is only 10 KB in size uncompressed.
+
+Read more...
+
+Finite State Machine Designer (2010)
+This is a tool for sketching finite state machines (the abstract kind used in CS theory classes). The main focus for this project was making the interface as simple and streamlined as possible because making a FSM is normally a very time-consuming task.
+
+Use app...
+
+Miscellaneous
+Algorithm List (2022)
+A list of algorithms and data structures that I found interesting. Each one comes with a working demo. Most of them are related to real-time collaboration in peer-to-peer scenarios.
+
+Read more...
+
+DFT Visualization (2010)
+This demonstrates the discrete Fourier transform, which rewrites a discrete signal as a weighted sum of sines and cosines of various frequencies. I created it as an in-class demo for the course I was a TA for, CS 123: Introduction to Computer Graphics.
+
+View demo...
