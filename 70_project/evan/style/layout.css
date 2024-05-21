@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #111;
+    line-height: 150%;
+    margin: 0;
+}
+
+h1,h2,h3,nav {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    margin-bottom: 64px;
+}
+h3 {
+    font-size: 22px;
+    margin-bottom: 32px;
+}
+ul {
+    margin: 0;
+    padding:0;
+}
+li {
+    list-style:none;
+}
+a {
+    color: #444;
+    text-decoration: none;
+}
+a:hover {
+    color: #111;
+}
+
+/* common */
+section {
+    width: 940px;
+    margin: auto;
+}
+
+nav {
+    height: 100px;
+    line-height: 100px;
+}
+nav section {
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: normal;
+}
+nav ul li:first-child::after {
+    content: " ●";
+    font-size: 16px;
+    color: #999;
+    vertical-align: top;
+    padding-left: 8px;
+    padding-right: 4px;
+}
+
+header {
+    height: 200px;
+    background: url(./../assets/main/bg-light.png) no-repeat 50%/cover fixed;
+}
+header section {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+main {
+    padding: 70px 0;
+}
+
+.home-card {
+    display: flex;
+    width: 940px;
+    margin: 48px 0;
+}
+
+.home-icon {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    margin-right: 48px;
+}
+.home-time {
+    font-weight: normal;
+}
+.home-description {
+    width: 790px;
+    height: 140px;
+    background:#eee;
+
+}
+h2:first-child+div>div:last-child {
+    height: 280px;
+}
+
+footer {
+    text-align: center;
+    padding: 48px;
+    background: #111;
+    color: #555;
+    font-style: italic;
+}
