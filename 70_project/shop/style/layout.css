@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* common */
+body,h1 {
+    margin: 0;
+}
+
+/* layout */
+.wrap {
+    width: 1200px;
+    margin: auto;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+h1 {
+    width: 200px;
+}
+nav {
+    width: 1000px;
+}
+
+/* slide */
+.slide {
+    height: 300px;
+}
+
+/* seciton */
+.contents {
+    display: flex;
+    height: 200px;
+}
+.contents div {
+    width: 400px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    height: 100px;
+}
+.blogo, .sns {
+    width: 200px;
+}
+.copy {
+    width: 800px;
+}
+
+
+/* background-color */
+h1 {background: #eee;}
+nav {background: #ddd;}
+.slide {background: #ccc;}
+.tabs {background: #bbb;}
+.banner {background: #aaa;}
+.shortcut {background: #999;}
+.blogo {background: #888;}
+.copy {background: #777;}
+.sns {background: #555;}
