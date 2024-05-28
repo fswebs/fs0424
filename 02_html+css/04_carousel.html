@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(reset.css);
+        @import url(typo.css);
+        
+        :root {
+            --w: 500px;
+            --h: 150px; 
+        }
+
+        #slide_wrap {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            width: var(--w);
+            height: var(--h);
+        }
+
+        #slide_wrap .slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #slide_wrap .slide ul {
+            height: 100%;
+        }
+        #slide_wrap .slide li {
+            height:100%;
+        }
+
+        /* next/prev */
+        #slide_wrap .btn a {
+            position: absolute;
+            width:100%;
+            height: 50px;
+            top:50%;
+            transform: translateY(-50%);
+            background: no-repeat 0 0/contain;
+        }
+        #slide_wrap .btn a.prev {left:10%; background-image: url(../assets/btn.svg);} 
+        #slide_wrap .btn a.next {right:10%; background-image: url(../assets/btn.svg); transform: translateY(-50%) scale(-1);} 
+
+        #slide_wrap .btn a span {
+            display: none;
+        }
+
+        /* pager */
+        #slide_wrap .pager {
+            display: flex;
+            position: absolute;
+            left:50%;
+            bottom:5%;
+            transform: translate(-50%);
+            background: no-repeat 0 0/contain;
+        }
+        #slide_wrap .pager a {
+            width:8px;
+            height:8px;
+            margin:4px;
+            border-radius: 50%;
+            background: #999;
+            text-indent: -9999em;
+        }
+        #slide_wrap .pager a.active {
+            background: #000;
+        }
+
+        /* bg-color */
+        .slide li:nth-child(1) {background: #d8d8d8;}
+        .slide li:nth-child(2) {background: #acacac;}
+        .slide li:nth-child(3) {background: #999999;}
+        </style>
+</head>
+
+<body>
+    <div id="slide_wrap">
+        <div class="slide">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="#" class="prev"><span>prev</span></a>
+            <a href="#" class="next"><span>next</span></a>
+        </div>
+        <div class="pager">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </div>
+</body>
+
+</html>
